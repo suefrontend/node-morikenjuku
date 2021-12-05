@@ -23,13 +23,14 @@ const input = [
 ];
 
 const output = (parma) => {
-  let entriesObj = {};
-  return parma.reduce((obj, current) => {
-    obj['ids'] = input.map((value) => value.id);
-    entriesObj[current.id] = { value: current.value };
-    obj['entities'] = entriesObj;
-    return obj;
-  }, {});
+  return parma.reduce(
+    (obj, current, index) => {
+      obj.ids[index] = current.id;
+      obj.entities[current.id] = { ['value']: current.value };
+      return obj;
+    },
+    { ids: [], entities: {} }
+  );
 };
 
 console.log(output(input));
