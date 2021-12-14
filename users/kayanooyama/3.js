@@ -1,7 +1,8 @@
 function input(param) {
-	return;
+	// Return index of 'e'
+	return param.indexOf('e');
 }
-console.log(input());
+console.log(input('abcdefd'));
 
 // input: "abcdefd"
 // output: 4
