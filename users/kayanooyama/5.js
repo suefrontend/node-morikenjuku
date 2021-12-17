@@ -1,6 +1,6 @@
 function input(param) {
 	// Create Object from Array
-	return obj;
+	return Object.assign({}, param);
 }
 console.log(input(['a', 'b', 'c']));
 
