@@ -1,5 +1,7 @@
 function input(param) {
-	return;
+	return param.reduce((prev, currentVal, currentIndex) => {
+		return { ...prev, [currentVal]: currentIndex };
+	}, {});
 }
 console.log(input(['a', 'b', 'c']));
 
